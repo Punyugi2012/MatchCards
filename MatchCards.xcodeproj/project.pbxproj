@@ -43,6 +43,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B82C3E1E20BD82B400312636 /* HelpingClass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HelpingClass;
+			sourceTree = "<group>";
+		};
 		B88FF96420B9625600E54AF3 = {
 			isa = PBXGroup;
 			children = (
@@ -62,7 +69,8 @@
 		B88FF96F20B9625600E54AF3 /* MatchCards */ = {
 			isa = PBXGroup;
 			children = (
-				B8B8F2D820BD438A00768336 /* Resources */,
+				B82C3E1E20BD82B400312636 /* HelpingClass */,
+				B8B8F2D820BD438A00768336 /* ClassDatas */,
 				B88FF98420B9632500E54AF3 /* Models */,
 				B88FF98320B962A700E54AF3 /* Controllers */,
 				B88FF98220B9629700E54AF3 /* Views */,
@@ -100,12 +108,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B8B8F2D820BD438A00768336 /* Resources */ = {
+		B8B8F2D820BD438A00768336 /* ClassDatas */ = {
 			isa = PBXGroup;
 			children = (
 				B88FF98920B9640300E54AF3 /* Card.swift */,
 			);
-			path = Resources;
+			path = ClassDatas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
