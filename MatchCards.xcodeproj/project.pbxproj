@@ -62,9 +62,10 @@
 		B88FF96F20B9625600E54AF3 /* MatchCards */ = {
 			isa = PBXGroup;
 			children = (
+				B8B8F2D820BD438A00768336 /* Resources */,
 				B88FF98420B9632500E54AF3 /* Models */,
-				B88FF98220B9629700E54AF3 /* Views */,
 				B88FF98320B962A700E54AF3 /* Controllers */,
+				B88FF98220B9629700E54AF3 /* Views */,
 				B88FF97020B9625600E54AF3 /* AppDelegate.swift */,
 				B88FF97720B9625700E54AF3 /* Assets.xcassets */,
 				B88FF97C20B9625700E54AF3 /* Info.plist */,
@@ -95,9 +96,16 @@
 			isa = PBXGroup;
 			children = (
 				B88FF98720B963EB00E54AF3 /* MatchCardModel.swift */,
-				B88FF98920B9640300E54AF3 /* Card.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B8B8F2D820BD438A00768336 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B88FF98920B9640300E54AF3 /* Card.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
