@@ -16,6 +16,7 @@
 		B88FF98820B963EB00E54AF3 /* MatchCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88FF98720B963EB00E54AF3 /* MatchCardModel.swift */; };
 		B88FF98A20B9640300E54AF3 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88FF98920B9640300E54AF3 /* Card.swift */; };
 		B88FF98E20B96D7300E54AF3 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88FF98D20B96D7300E54AF3 /* CardCollectionViewCell.swift */; };
+		B8CBCADF20BEA6BA00947EB9 /* ModeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CBCADE20BEA6BA00947EB9 /* ModeGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B88FF98720B963EB00E54AF3 /* MatchCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardModel.swift; sourceTree = "<group>"; };
 		B88FF98920B9640300E54AF3 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		B88FF98D20B96D7300E54AF3 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		B8CBCADE20BEA6BA00947EB9 /* ModeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		B82C3E1E20BD82B400312636 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B8CBCADE20BEA6BA00947EB9 /* ModeGame.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				B88FF98820B963EB00E54AF3 /* MatchCardModel.swift in Sources */,
 				B855D24220BABA0B00640280 /* GameMenuViewController.swift in Sources */,
+				B8CBCADF20BEA6BA00947EB9 /* ModeGame.swift in Sources */,
 				B88FF97120B9625600E54AF3 /* AppDelegate.swift in Sources */,
 				B88FF98E20B96D7300E54AF3 /* CardCollectionViewCell.swift in Sources */,
 				B8487B2920BAD9E700D4C473 /* MatchCardViewController.swift in Sources */,

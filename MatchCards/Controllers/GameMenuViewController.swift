@@ -9,8 +9,8 @@
 import UIKit
 
 class GameMenuViewController: UIViewController {
-
-    var modeGame: Int!
+    
+    var modeGame: ModeGame!
     @IBOutlet weak var fastestMedium: UILabel!
     @IBOutlet weak var fastestHard: UILabel!
     
@@ -19,13 +19,13 @@ class GameMenuViewController: UIViewController {
         setFastestTime()
     }
     func setFastestTime() {
-        if let medium = UserDefaults.standard.value(forKey: "fastestMedium") {
+        if let medium = UserDefaults.standard.value(forKey: KeyFastestTime.fastestMedium.rawValue) {
             fastestMedium.text = "Fastest Time Medium: \(medium)"
         }
         else {
             fastestMedium.text = "Fastest Time Medium: - "
         }
-        if let hard = UserDefaults.standard.value(forKey: "fastestHard") {
+        if let hard = UserDefaults.standard.value(forKey: KeyFastestTime.fastestHard.rawValue) {
             fastestHard.text = "Fastest Time Hard: \(hard)"
         }
         else {
@@ -36,17 +36,24 @@ class GameMenuViewController: UIViewController {
         setFastestTime()
     }
     @IBAction func selectedMediumMode(_ sender: UIButton) {
-        modeGame = 0
+        modeGame = .medium
         performSegue(withIdentifier: "ToPlayGame", sender: self)
     }
     @IBAction func selectedHardMode(_ sender: UIButton) {
-        modeGame = 1
+        modeGame = .hard
         performSegue(withIdentifier: "ToPlayGame", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToPlayGame" {
             if let destination = segue.destination as? MatchCardViewController {
-                destination.modeGame = modeGame
+                switch modeGame {
+                    case .medium:
+                        destination.modeGame = .medium
+                    case .hard:
+                        destination.modeGame = .hard
+                    default:
+                        break
+                }
             }
         }
     }

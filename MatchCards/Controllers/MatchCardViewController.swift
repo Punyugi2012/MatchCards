@@ -22,7 +22,7 @@ class MatchCardViewController: UIViewController {
     var isCountedTime = false
     var secondsMinTime: Float = 0.0
     var timer: Timer?
-    var modeGame: Int!
+    var modeGame: ModeGame!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +37,13 @@ class MatchCardViewController: UIViewController {
         }
     }
     func setModeGame() {
-        if modeGame == 0 {
-            matchCardModel = MatchCardModel(numOfPairCards: 5)
-        }
-        else {
-            matchCardModel = MatchCardModel(numOfPairCards: 10)
+        switch modeGame {
+            case .medium:
+                matchCardModel = MatchCardModel(numOfPairCards: 5)
+            case .hard:
+                matchCardModel = MatchCardModel(numOfPairCards: 10)
+            default:
+                break
         }
     }
     func setGame() {
@@ -59,7 +61,7 @@ class MatchCardViewController: UIViewController {
                 }
             }
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + (modeGame == 0 ? 2 : 4)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + (modeGame == .medium ? 2 : 4)) {
             for cell in self.myCollectionView.visibleCells {
                 if let cardCell = cell as? CardCollectionViewCell {
                     cardCell.filpBackCard()
@@ -152,14 +154,14 @@ extension MatchCardViewController: UICollectionViewDataSource, UICollectionViewD
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: myCollectionView.bounds.width / 6, height: self.myCollectionView.frame.size.height / (modeGame == 0 ? 2 : 4) - 10) 
+        return CGSize(width: myCollectionView.bounds.width / 6, height: self.myCollectionView.frame.size.height / (modeGame == .medium ? 2 : 4) - 10)
     }
 }
 
 extension MatchCardViewController {
     func setTimeBar() {
         countTimeLbl.text = "\(milliseconds)"
-        if let fastestTime = UserDefaults.standard.value(forKey: (modeGame == 0 ? "fastestMedium":"fastestHard")) as? Float {
+        if let fastestTime = UserDefaults.standard.value(forKey: (modeGame == .medium ? KeyFastestTime.fastestMedium.rawValue:KeyFastestTime.fastestHard.rawValue)) as? Float {
             secondsMinTime = fastestTime
             fastestTimeLbl.text = "\(secondsMinTime)"
         }
@@ -188,7 +190,7 @@ extension MatchCardViewController {
         }
     }
     func saveFastestTime(time t: Float) {
-        UserDefaults.standard.set(t, forKey: (modeGame == 0 ? "fastestMedium":"fastestHard"))
+        UserDefaults.standard.set(t, forKey: (modeGame == .medium ? KeyFastestTime.fastestMedium.rawValue:KeyFastestTime.fastestHard.rawValue))
     }
     func onCouterTime() {
         if !isCountedTime {
